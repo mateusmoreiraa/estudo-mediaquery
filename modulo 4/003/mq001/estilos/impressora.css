@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*Estilos para IMPRESSORAS!*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+   background-color: rgb(252, 252, 252); 
+    height: 80px;
+    box-shadow: 1px 1px 7px black;
+}
+h1 {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-size: 2em;
+}
+h2 {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    font-size: 1em;
+}
+nav {
+    display: none;
+}
+main {
+    max-width: 800px;
+    margin: 20px auto auto auto;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+}
+article{
+    font-family: monospace;
+}
+body::after {
+    content: 'Este artigo foi impresso através do site www.jornaldodinamarques.com.br';
+}

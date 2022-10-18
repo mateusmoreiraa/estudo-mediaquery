@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        *{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input {
+            box-shadow: 1px 1px 7px black;
+        }
+        .esporte > input{
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Primeiro Formulario</h1>
+    <form action="cadastro.php" method="post" autocomplete="off"> <!--  Action = o script que a linguagem que aqui no caso é php vai rodar.   Method = Get (que é o padrão) apresenta os dados enviados na url e post que esconde os dados da url. Autocomplete = ON deixa completar automaticamente e OFF nao deixa completar automaticamente-->
+        <p><label for="inome">Nome:</label> <input type="text" name="nome" id="inome"></p>
+        <p><label for="isobrenome">Sobrenome:</label> <input type="text" name="sobrenome" id="isobrenome"></p>
+        <p><input type="submit" value="Enviar"></p>
+    </form>
+    <br>
+    <br>
+    <br>
+    <H1>Segundo Formulario</H1>
+        <p>Um formulario mais completo</p>
+    <form action="cadastro.php" method="post">
+        <fieldset> <!--Fieldset = Agrupamentos de dados, faz uma caixa envolta de todos os dados selecionados-->
+            <legend>Dados pessoais</legend> <!--Cria uma legenda no Fieldset-->
+            <p>
+                <label for="iusu">Usuario</label>
+                <input type="text" name="usu" id="iusu" required minlength="5" autocomplete="username"  placeholder="Nome do Usuario" size="12">
+            </p>
+            <p>
+                <label for="isen">Senha</label>
+                <input type="password" name="sen" id="isen" required min="6" autocomplete="current-password" placeholder="Digite sua senha" size="12">
+            </p>
+            <p class="esporte"> 
+                Sexo:
+                <label for="imas">Masculino</label>
+                <input type="radio" name="sex" id="imas">
+
+                <label for="ifem">Feminino</label>
+                <input type="radio" name="sex" id="ifem">
+            </p>
+            <p>
+                <label for="imdeia">Média</label>
+                <input type="number" name="media" id="imedia" required min="0" max="10" step="0.1" size="12" placeholder="Média">
+            </p>
+            <p>
+                <label for="idata">Data</label>
+                <input type="date" name="data" id="idata" required>
+            </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Esportes</legend>
+                <p>Você pratica esporte?</p>
+                <p>
+                    <input type="radio" name="prat" id="iprat">
+                        <label for="iprat">Pratico</label>
+                    <input type="radio" name="prat" id="inprat">
+                        <label for="inprat">Não pratico</label>
+                </p>
+                <hr>
+                <br>
+                <p> Quais esportes você pratica?</p>
+                <hr>
+                <p class="esporte">
+                    <label for="ifut">Futebol</label>
+                    <input type="checkbox" name="fut" id="ifut">
+
+                    <label for="ibas">Basquete</label>
+                    <input type="checkbox" name="bas" id="ibas">
+
+                    <label for="iten">Tenis</label>
+                    <input type="checkbox" name="ten" id="iten">
+
+                    <label for="inat">Natação</label>
+                    <input type="checkbox" name="nat" id="inat">
+
+                    <label for="ijiu">Jiu-Jitsu</label>
+                    <input type="checkbox" name="jiu" id="ijiu">
+
+                    <label for="idan">Dança</label>
+                    <input type="checkbox" name="dan" id="idan">
+
+                    <label for="ifal">Falcoaria</label>
+                    <input type="radio" name="fal" id="ifal" checked>
+                </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Foto de Perfil</legend>
+                <p>
+                    <label for="ifot">Foto:</label>
+                    <input type="file" name="fot" id="ifot">
+                </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Local e Profissão</legend> <!--Tipos de formulario sem input-->
+            <p>
+                <label for="iest">Estado:</label>
+                <select name="estado" id="iest">
+                        <option value="" selected> -- Escolha --</option> <!--Para colocar alternativas na resposta, o comando é "option"-->
+
+                        <optgroup label="Região Sudeste"> <!--"OPTGROUP" é uma marcação de seleção de grupo-->
+                            <option value="MG">Minas Gerais</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="SP">São Paulo</option>
+                        </optgroup>
+                        
+                        <optgroup label="Região Nordeste">
+                            <option value="MA">Maranhão</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                        </optgroup>
+                </select>
+            </p>
+            <p>
+                <label for="iprof">Profissão:</label>
+                <input type="text" name="prof" id="iprof" list="lstprof">
+                <datalist id="lstprof">
+                    <option>Administrador</option>
+                    <option>Contador</option>
+                    <option>Desenvolvedor</option>
+                    <option>Professor</option>
+                    <option>Veterinario</option>
+                </datalist>
+            </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Deixe a sua mensagem</legend>
+            <p>
+                <label for="imsg">Mensagem:</label>
+                <br>
+                <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+            </p>
+        </fieldset>
+        <fieldset> <!--Metedo de output - Serve para calculos, porem utiliza javascript-->
+            <legend>Media de dias</legend>
+            <p>
+                <label for="in1">Dias da semana 1</label>
+                <input type="number" name="n1" id="in1" min="0" max="7" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value) + Number(in3.value)"> <!-- Javascript - Oninput = entrada ou seja, quando tiver algum valor for inserido em id's in1, in2 e in3, eles seram somados e enviado o valos para o id isoma -->
+            </p>
+            <p>
+                <label for="in2">Dias da semana 2</label>
+                <input type="number" name="n2" id="in2" min="0" max="7" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value) + Number(in3.value)">
+            </p>
+            <p>
+                <label for="in3">Dias da semana 3</label>
+                <input type="number" name="n3" id="in3" min="0" max="7" oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value) + Number(in3.value)">
+            </p>
+            <p>
+                <label for="isoma">Total de dias</label>
+                <output name="soma" id="isoma">0</output><!--Output Serve para demonstrar algum valor-->
+            </p>
+        </fieldset>
+            <p>
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+            </p>
+
+
+    </form>
+
+</body>
+</html>
