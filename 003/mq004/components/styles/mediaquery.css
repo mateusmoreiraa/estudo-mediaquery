@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+
+/* Typical Device Breakpoints (Pontos de interrupção típicos do dispositivo)
+---------------------------
+Telas pequenas: MAX 600px
+Smartphones:    min 600px
+Tablets:        min 768px
+Desktop:        min 992px
+TV:             min 1200px
+*/
+
+@media print {
+    body {
+        border: 2px solid black;
+        border-radius: 5px;
+    }
+
+    main{
+        width: 90vw;
+    }
+
+    main::after {
+        content: 'Site teste para o curso HTML - CSS do CursoemVideo prof. Gustavo Guanabara';
+        text-decoration: overline;
+    }
+
+    h1 {
+        color: black;
+        text-shadow: none;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5em;
+    }
+
+    img#phone { display: none;}
+    img#tablet { display: none;}
+    img#print { display: block;}
+    img#pc { display: none;}
+    img#tv { display: none;}
+}
+
+@media (min-width: 768px) { /* Tablet */
+    body{background-image: url(../image/back-tablet.jpg);} 
+    img#phone { display: none;}
+    img#tablet { display: block;}
+    img#print { display: none;}
+    img#pc { display: none;}
+    img#tv { display: none;}
+}
+
+@media (min-width: 992px) { /* PC */
+    body{background-image: url(../image/back-pc.jpg);} 
+    img#phone { display: none;}
+    img#tablet { display: none;}
+    img#print { display: none;}
+    img#pc { display: block;}
+    img#tv { display: none;}
+}
+
+@media (min-width: 1200px) { /* TV */
+    body{background-image: url(../image/back-tv.jpg);} 
+    img#phone { display: none;}
+    img#tablet { display: none;}
+    img#print { display: none;}
+    img#pc { display: none;}
+    img#tv { display: block;}
+}
